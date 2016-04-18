@@ -1,0 +1,18 @@
+<%= form_for(@pin) do |f| %>
+  <%= render 'partials/error_messages', object: f.object %>
+
+  <div class="form-group">
+    <%= f.label :description %>
+    <%= f.text_area :description, class: 'form-control input-lg' %>
+  </div>
+  <div class="row">&nbsp;</div>
+  <div class="row">&nbsp;</div>
+  <div class="row">
+    <div class="col-xs-offset-3 col-xs-6">
+      <div class="form-group text-center">
+        <%= f.submit class: 'btn btn-success btn-block' %>
+      </div>
+    </div>
+  </div>
+
+<% end %>
