@@ -1,0 +1,13 @@
+<% if user_signed_in? %>
+  
+<% else %>
+  <div class="jumbotron">
+    <h1>Welcome to PhotoShare!</h1>
+    <p>
+      You've found the home page for the PhotoShare application.
+    </p>
+    <p>
+      <%= link_to 'Sign Up Now!', new_user_registration_path, class: 'btn btn-success btn-lg' %>
+    </p>
+  </div>
+<% end %>
