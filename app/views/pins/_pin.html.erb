@@ -1,18 +1,21 @@
-<div class="box">
-  <%= link_to (image_tag pin.image()), pin %>
-  <p class="description">
-    <%= pin.description %>
-  </p>
-  <p class="userinfo">
-    <strong>
-      Posted by <%= pin.user.name %>
-    </strong>
-  </p>
 
-  <% if current_user == pin.user %>
-    <p class="pin_action">
-      <%= link_to '<i class= "fa fa-pencil" data-toggle="tooltip" data-placement="top" title="Edit"></i>'.html_safe, edit_pin_path(pin) %> |
-      <%= link_to '<i class= "fa fa-trash-o" data-toggle="tooltip" data-placement="top" title="Delete"></i>'.html_safe, pin, method: :delete, data: { confirm: 'Are you sure?' } %>
+<div class="box panel panel-default">
+  <%= link_to (image_tag pin.image.url), pin %>
+  <div class="panel-body">
+    <p>
+      <%= pin.description %>
     </p>
-  <% end %>
+    <p>
+      <strong>
+        Posted by <%= pin.user.name %>
+      </strong>
+    </p>
+
+    <% if current_user == pin.user %>
+      <p>
+        <%= link_to '<i class= "fa fa-pencil" data-toggle="tooltip" data-placement="top" title="Edit"></i>'.html_safe, edit_pin_path(pin) %> |
+        <%= link_to '<i class= "fa fa-trash-o" data-toggle="tooltip" data-placement="top" title="Delete"></i>'.html_safe, pin, method: :delete, data: { confirm: 'Are you sure?' } %>
+      </p>
+    <% end %>
+    </div>
 </div>

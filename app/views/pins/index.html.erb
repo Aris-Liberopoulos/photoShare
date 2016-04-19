@@ -1,8 +1,4 @@
 <%= render 'pages/home' %>
-<div class="pins_container">
-  <div class="container">
-    <div id="pins">
-      <%= render @pins %>
-    </div>
-  </div>
+<div class="container transitions-enabled centered masonry masonry-brick" id="pins">
+  <%= render @pins %>
 </div>
